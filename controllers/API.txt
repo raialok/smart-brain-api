@@ -1,0 +1,5 @@
+// -> / = this is working
+// -> /sign in => POST = success or fail
+// -> /register => POST = success or fail
+// -> /profile/:userID -> Get = user
+// -> /image -> PUT -> user count

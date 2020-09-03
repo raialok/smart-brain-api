@@ -6,6 +6,8 @@ const knex = require("knex");
 
 const register = require("./controllers/register");
 const signin = require("./controllers/signin");
+const profile = require("./controllers/profile");
+const image = require("./controllers/image");
 
 const db = knex({
   client: "pg",
@@ -33,36 +35,13 @@ app.post("/register", (req, res) => {
 });
 
 app.get("/profile/:id", (req, res) => {
-  const { id } = req.params;
-  db.select("*")
-    .from("users")
-    .where({ id })
-    .then((user) => {
-      user.length
-        ? res.status(400).json("not found")
-        : res.status(400).json("not found");
-    })
-    .catch((err) => res.status(400).json("not found"));
+  profile.handleProfile(req, res, db);
 });
 
 app.put("/image", (req, res) => {
-  const { id } = req.body;
-  db("users")
-    .where("id", "=", id)
-    .increment("entries", 1)
-    .returning("entries")
-    .then((entries) => {
-      res.json(entries);
-    })
-    .catch((err) => res.json("Unable to get entries"));
+  image.handleImage(req, res, db);
 });
 
 app.listen(3000, () => {
   console.log("app is running on port 3000");
 });
-
-// -> / = this is working
-// -> /sign in => POST = success or fail
-// -> /register => POST = success or fail
-// -> /profile/:userID -> Get = user
-// -> /image -> PUT -> user count
