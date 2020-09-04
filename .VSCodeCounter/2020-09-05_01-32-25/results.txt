@@ -1,0 +1,33 @@
+Date : 2020-09-05 01:32:25
+Directory : /Users/alokrai/Documents/courses/smart-brain-api
+Total : 7 files,  2854 codes, 0 comments, 25 blanks, all 2879 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |      2,710 |          0 |          2 |      2,712 |
+| JavaScript |          5 |        144 |          0 |         23 |        167 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                     | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                        |          7 |      2,854 |          0 |         25 |      2,879 |
+| controllers                                                              |          4 |        104 |          0 |         11 |        115 |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                 | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/alokrai/Documents/courses/smart-brain-api/controllers/image.js    | JavaScript |         28 |          0 |          5 |         33 |
+| /Users/alokrai/Documents/courses/smart-brain-api/controllers/profile.js  | JavaScript |         15 |          0 |          2 |         17 |
+| /Users/alokrai/Documents/courses/smart-brain-api/controllers/register.js | JavaScript |         33 |          0 |          2 |         35 |
+| /Users/alokrai/Documents/courses/smart-brain-api/controllers/signin.js   | JavaScript |         28 |          0 |          2 |         30 |
+| /Users/alokrai/Documents/courses/smart-brain-api/package-lock.json       | JSON       |      2,686 |          0 |          1 |      2,687 |
+| /Users/alokrai/Documents/courses/smart-brain-api/package.json            | JSON       |         24 |          0 |          1 |         25 |
+| /Users/alokrai/Documents/courses/smart-brain-api/server.js               | JavaScript |         40 |          0 |         12 |         52 |
+| Total                                                                    |            |      2,854 |          0 |         25 |      2,879 |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+

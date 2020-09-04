@@ -9,6 +9,8 @@ const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
+require("dotenv").config();
+
 const db = knex({
   client: "pg",
   connection: {
@@ -44,6 +46,6 @@ app.put("/image", (req, res) => {
 
 app.post("/imageurl", image.handleApiCall);
 
-app.listen(3000, () => {
-  console.log("app is running on port 3000");
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`app is running on port ${process.env.PORT}`);
 });
