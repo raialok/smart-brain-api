@@ -24,13 +24,13 @@ const db = knex({
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send(db.users);
-});
-
 // app.get("/", (req, res) => {
-//   res.send("cool");
+//   res.send(db.users);
 // });
+
+app.get("/", (req, res) => {
+  res.send("cool");
+});
 
 app.post("/signin", (req, res) => {
   signin.handleSignin(req, res, db, bcrypt);
