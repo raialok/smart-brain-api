@@ -17,8 +17,6 @@ const db = knex({
   },
 });
 
-db.connect();
-
 app.use(express.json());
 app.use(cors());
 
