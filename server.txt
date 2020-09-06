@@ -1,16 +1,14 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const app = express();
 const bcrypt = require("bcrypt-nodejs");
 const cors = require("cors");
 const knex = require("knex");
-
-//Controllers
 const register = require("./controllers/register");
 const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
-// database connection
+require("dotenv").config();
 const db = knex({
   client: "pg",
   connection: {
@@ -19,20 +17,19 @@ const db = knex({
   },
 });
 
-db.select("*").from("users");
-
-const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
-/*-----------------------         ROUTES       -------------------*/
+// app.get("/", (req, res) => {
+//   res.send(db.users);
+// });
 
 app.get("/", (req, res) => {
-  res.send(database.users);
+  res.send("cool");
 });
 
 app.post("/signin", (req, res) => {
-  signin.handleSignin(req, res, bcrypt, db);
+  signin.handleSignin(req, res, db, bcrypt);
 });
 
 app.post("/register", (req, res) => {
@@ -40,17 +37,15 @@ app.post("/register", (req, res) => {
 });
 
 app.get("/profile/:id", (req, res) => {
-  profile.handleProfileGet(req, res, db);
+  profile.handleProfile(req, res, db);
 });
 
 app.put("/image", (req, res) => {
   image.handleImage(req, res, db);
 });
 
-app.post("/imageurl", (req, res) => {
-  image.handleAPICall(req, res);
-});
+app.post("/imageurl", image.handleApiCall);
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`app running in port ${process.env.PORT}`);
+  console.log(`app is running on port ${process.env.PORT}`);
 });
