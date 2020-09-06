@@ -8,21 +8,12 @@ const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
-// require("dotenv").config();
-// const db = knex({
-//   client: "pg",
-//   connection: {
-//     connectionString: process.env.DATABASE_URL,
-//     ssl: true,
-//   },
-// });
-
-const { db } = require("pg");
-
-const db = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
+require("dotenv").config();
+const db = knex({
+  client: "pg",
+  connection: {
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
